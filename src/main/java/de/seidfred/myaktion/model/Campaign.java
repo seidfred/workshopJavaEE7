@@ -72,4 +72,11 @@ public class Campaign {
 		donations = aDonations;
 	}
 
+	@Override
+	public String toString() {
+		return "Campaign [name=" + name + ", targetAmount=" + targetAmount + ", donationMinimum=" + donationMinimum
+				+ ", amountDonatedSoFar=" + amountDonatedSoFar + ", account=" + account + ", id=" + id + ", donations="
+				+ donations + "]";
+	}
+
 }
