@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:body>
+	<f:view contract="#{view.locale.language}">
+		<ui:composition template="/template.xhtml">
+			<ui:define name="content">
+				<h1>#{msg['listCampaigns.my_campaigns']}</h1>
+			</ui:define>
+		</ui:composition>
+
+		<h:form>
+			<h:dataTable value="#{campaignListProducer.campaigns}" var="campaign">
+				<h:column>
+					<h:commandLink
+						action="#{listCampaignsController.doDeleteCampaign(campaign)}"
+						value="x" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">#{msg['listCampaigns.name']}</f:facet>
+					<h:outputText value="#{campaign.name}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">#{msg['listCampaigns.target_amount']}</f:facet>
+					<h:outputText value="#{campaign.targetAmount}" />
+					<f:convertNumber type="currency" currencyCode="EUR" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">#{msg['listCampaigns.donated_so_far']}</f:facet>
+					<h:outputText value="#{campaign.amountDonatedSoFar}" />
+					<f:convertNumber type="currency" currencyCode="EUR" />
+				</h:column>
+
+				<h:column>
+					<h:commandLink
+						action="#{listCampaignsController.doEditCampaing(campaign)}"
+						value="#{msg['listCampaigns.edit']}" />
+				</h:column>
+
+				<h:column>
+					<h:commandLink
+						action="#{listCampaignsController.doListDonations(campaign)}"
+						value="#{msg['listCampaigns.list_donations']}" />
+				</h:column>
+
+				<h:column>
+					<h:commandLink
+						action="#{listCampaignsController.doEditDonationForm(campaign)}"
+						value="#{msg['listCampaigns.form']}" />
+				</h:column>
+			</h:dataTable>
+
+			<h:commandButton action="#{listCampaignsController.doAddCampaing()}"
+				value="#{msg['listCampaigns.add_campaign']}" />
+		</h:form>
+	</f:view>
+</h:body>
+</html>
