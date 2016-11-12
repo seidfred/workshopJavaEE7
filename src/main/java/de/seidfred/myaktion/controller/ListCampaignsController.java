@@ -17,27 +17,27 @@ public class ListCampaignsController implements Serializable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ListCampaignsController.class);
 
 	public String doAddCampaing() {
-		LOGGER.debug("Add Campaign");
+		LOGGER.info("Add Campaign");
 		return Pages.EDIT_CAMPAIGN;
 	}
 
 	public String doEditCampaing(Campaign aCampaign) {
-		LOGGER.debug("Edit Campaign " + aCampaign);
+		LOGGER.info("Edit Campaign " + aCampaign);
 		return Pages.EDIT_CAMPAIGN;
 	}
 
 	public String doEditDonationForm(Campaign aCampaign) {
-		LOGGER.debug("Edit Donation Form of Campaign " + aCampaign);
+		LOGGER.info("Edit Donation Form of Campaign " + aCampaign);
 		return Pages.EDIT_DONATION_FORM;
 	}
 
 	public String doListDonations(Campaign aCampaign) {
-		LOGGER.debug("List Donations of campaign " + aCampaign);
+		LOGGER.info("List Donations of campaign " + aCampaign);
 		return Pages.LIST_DONATIONS;
 	}
 
 	public void doDeleteCampaign(Campaign aCampaign) {
-		LOGGER.debug("Deletion not implemented yet");
+		LOGGER.info("Deletion not implemented yet");
 	}
 
 }
