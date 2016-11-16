@@ -56,6 +56,16 @@
 						</h:column>
 					</h:dataTable>
 
+					<h:panelGrid columns="2">
+						<h:outputLabel value="linksoben" />
+						<h:outputLabel value="rechtsoben" />
+						<h:outputLabel value="linksunten" />
+						<h:panelGroup>
+							<h:outputLabel value="rechts" />
+							<h:outputLabel value="unten" />
+						</h:panelGroup>
+					</h:panelGrid>
+
 					<h:commandButton
 						action="#{listCampaignsController.doAddCampaing()}"
 						value="#{msg['listCampaigns.add_campaign']}" />
