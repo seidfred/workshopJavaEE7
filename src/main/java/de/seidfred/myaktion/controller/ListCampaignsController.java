@@ -38,7 +38,7 @@ public class ListCampaignsController implements Serializable {
 	}
 
 	public String doListDonations(Campaign aCampaign) {
-		LOGGER.info("List Donations of campaign " + aCampaign);
+		campaignProducer.setSelectedCampaign(aCampaign);
 		return Pages.LIST_DONATIONS;
 	}
 
