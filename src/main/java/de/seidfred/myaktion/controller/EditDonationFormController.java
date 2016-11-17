@@ -39,16 +39,16 @@ public class EditDonationFormController implements Serializable {
 		return textColor;
 	}
 
-	public void setTextColor(String textColor) {
-		this.textColor = textColor;
+	public void setTextColor(String aTextColor) {
+		textColor = aTextColor;
 	}
 
 	public String getBgColor() {
 		return bgColor;
 	}
 
-	public void setBgColor(String bgColor) {
-		this.bgColor = bgColor;
+	public void setBgColor(String aBgColor) {
+		bgColor = aBgColor;
 	}
 
 	public List<SelectItem> getSelectOneColors() {
